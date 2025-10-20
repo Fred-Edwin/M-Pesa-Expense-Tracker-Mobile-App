@@ -1,5 +1,11 @@
 # M-Pesa Expense Tracker Mobile App
 
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-Latest-0175C2?logo=dart)](https://dart.dev)
+[![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android)](https://www.android.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Fred-Edwin/M-Pesa-Expense-Tracker-Mobile-App?style=social)](https://github.com/Fred-Edwin/M-Pesa-Expense-Tracker-Mobile-App/stargazers)
+
 A Flutter mobile application that automatically tracks M-Pesa expenses by reading and parsing SMS messages from M-Pesa.
 
 ## Features
