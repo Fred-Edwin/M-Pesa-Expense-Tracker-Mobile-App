@@ -1,0 +1,196 @@
+M-Pesa Expense Tracker Mobile App/
+│
+├── 📱 lib/                                    # Main Flutter application code
+│   │
+│   ├── 📊 models/                             # Data models
+│   │   ├── transaction.dart                   # Transaction model with CRUD methods
+│   │   └── category.dart                      # Category & CategoryRule models + defaults
+│   │
+│   ├── 🖼️ screens/                            # UI screens
+│   │   ├── welcome_screen.dart                # Onboarding + SMS permission request
+│   │   ├── dashboard_screen.dart              # Home screen (summary cards, categories, recent)
+│   │   ├── transaction_list_screen.dart       # All transactions with search & filter
+│   │   └── transaction_detail_screen.dart     # Transaction details + edit category/notes
+│   │
+│   ├── 🧩 widgets/                            # Reusable UI components
+│   │   ├── summary_card.dart                  # Summary card widget (Total Spent, This Month)
+│   │   ├── transaction_list_item.dart         # Transaction row item
+│   │   └── category_row.dart                  # Category spending row
+│   │
+│   ├── ⚙️ services/                           # Business logic & services
+│   │   ├── database_helper.dart               # SQLite database operations (CRUD, queries)
+│   │   ├── sms_parser_service.dart            # Parse M-Pesa SMS with regex
+│   │   ├── sms_reader_service.dart            # Read SMS + permission handling
+│   │   └── transaction_provider.dart          # State management with Provider
+│   │
+│   ├── 🛠️ utils/                              # Utilities & helpers
+│   │   ├── app_theme.dart                     # Theme (colors, fonts, spacing, shadows)
+│   │   └── currency_formatter.dart            # Currency formatting utilities
+│   │
+│   └── main.dart                              # App entry point + splash screen
+│
+├── 🤖 android/                                # Android-specific configuration
+│   ├── app/
+│   │   ├── src/main/
+│   │   │   ├── AndroidManifest.xml            # SMS permissions (READ_SMS, RECEIVE_SMS)
+│   │   │   └── kotlin/com/mpesa/expense_tracker/
+│   │   │       └── MainActivity.kt            # Main Android activity
+│   │   └── build.gradle                       # App-level Gradle config (minSdk: 23)
+│   ├── build.gradle                           # Project-level Gradle config
+│   ├── settings.gradle                        # Gradle settings
+│   └── gradle.properties                      # Gradle properties
+│
+├── 📦 pubspec.yaml                            # Dependencies & app configuration
+│
+├── 📄 Documentation Files
+│   ├── PRD.md                                 # Product Requirements Document (reference)
+│   ├── design.md                              # Design Specifications (reference)
+│   ├── README.md                              # Setup & usage instructions
+│   ├── IMPLEMENTATION_SUMMARY.md              # Complete implementation details
+│   ├── QUICK_START.md                         # Quick start guide (3 steps)
+│   └── FILE_STRUCTURE.txt                     # This file
+│
+└── .gitignore                                 # Git ignore rules (if using version control)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FILE COUNTS & STATISTICS
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 Total Files Created: 30+
+
+Breakdown by Type:
+├── Dart Files: 16 files
+│   ├── Screens: 4 files (Welcome, Dashboard, Transaction List, Transaction Detail)
+│   ├── Models: 2 files (Transaction, Category)
+│   ├── Widgets: 3 files (Summary Card, List Item, Category Row)
+│   ├── Services: 4 files (Database, SMS Parser, SMS Reader, Provider)
+│   ├── Utils: 2 files (Theme, Currency Formatter)
+│   └── Main: 1 file (Entry Point)
+│
+├── Android Config: 6 files
+│   ├── AndroidManifest.xml (Permissions)
+│   ├── MainActivity.kt (Kotlin activity)
+│   ├── build.gradle (App-level)
+│   ├── build.gradle (Project-level)
+│   ├── settings.gradle
+│   └── gradle.properties
+│
+├── Configuration: 1 file
+│   └── pubspec.yaml (Dependencies)
+│
+└── Documentation: 5 files
+    ├── README.md
+    ├── IMPLEMENTATION_SUMMARY.md
+    ├── QUICK_START.md
+    ├── FILE_STRUCTURE.txt
+    └── PRD.md & design.md (Reference documents)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+LINES OF CODE
+═══════════════════════════════════════════════════════════════════════════════
+
+Estimated Total: 3,500+ lines of code
+
+By Component:
+├── Database Layer: ~400 lines
+├── SMS Parser: ~300 lines
+├── Screens: ~1,200 lines
+├── Widgets: ~300 lines
+├── State Management: ~200 lines
+├── Theme & Utils: ~300 lines
+├── Android Config: ~150 lines
+└── Documentation: ~800 lines
+
+
+═══════════════════════════════════════════════════════════════════════════════
+KEY TECHNOLOGIES & PACKAGES
+═══════════════════════════════════════════════════════════════════════════════
+
+Flutter SDK: 3.x
+Dart Language: Latest
+
+Dependencies:
+├── provider (6.1.1)              → State Management
+├── sqflite (2.3.0)               → SQLite Database
+├── path (1.8.3)                  → Path Utilities
+├── flutter_sms_inbox (1.0.2)     → SMS Reading
+├── permission_handler (11.0.1)   → Permissions
+├── intl (0.18.1)                 → Formatting
+└── google_fonts (6.1.0)          → Inter Font
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DATABASE SCHEMA
+═══════════════════════════════════════════════════════════════════════════════
+
+Table: transactions (12 columns)
+├── id, transaction_id, amount, type, recipient, category
+├── date, time, balance, sms_body, notes, created_at
+
+Table: categories (4 columns)
+├── id, name, icon, user_created
+
+Table: category_rules (3 columns)
+├── id, recipient_keyword, category
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FEATURE IMPLEMENTATION STATUS
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ SMS Reading & Parsing
+✅ Automatic Categorization (11 categories, 40+ rules)
+✅ SQLite Database with 3 tables
+✅ Dashboard Screen (Summary + Categories + Recent)
+✅ Transaction List Screen (Search + Filter)
+✅ Transaction Detail Screen (View + Edit)
+✅ Permission Handling (SMS permissions)
+✅ State Management (Provider)
+✅ Material Design 3 UI
+✅ Theme Configuration (Colors, Fonts, Spacing)
+✅ Error Handling & Loading States
+✅ Android Configuration (Manifest, Gradle)
+✅ Currency Formatting (KSh with commas)
+✅ Pull-to-Refresh
+✅ Category Editing
+✅ Notes Adding
+✅ Empty States
+✅ Splash Screen
+✅ Welcome/Onboarding
+
+
+═══════════════════════════════════════════════════════════════════════════════
+HOW TO USE THIS FILE STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+
+1. 📖 Read PRD.md & design.md to understand requirements
+2. 📁 Navigate to lib/ for application code
+3. 🖼️ Start with screens/ to see UI implementation
+4. ⚙️ Check services/ for business logic
+5. 📊 Review models/ for data structures
+6. 🤖 Configure android/ for platform-specific settings
+7. 📦 Run "flutter pub get" to install dependencies
+8. 🚀 Run "flutter run" to start the app
+
+
+═══════════════════════════════════════════════════════════════════════════════
+QUICK NAVIGATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Want to...
+├── Understand the app? → Read README.md
+├── See implementation details? → Read IMPLEMENTATION_SUMMARY.md
+├── Get started quickly? → Read QUICK_START.md
+├── Modify colors/theme? → Edit lib/utils/app_theme.dart
+├── Add merchant rules? → Edit lib/services/database_helper.dart
+├── Change SMS parsing? → Edit lib/services/sms_parser_service.dart
+├── Modify UI screens? → Edit lib/screens/*.dart
+├── Add new categories? → Edit lib/models/category.dart
+└── Configure Android? → Edit android/app/src/main/AndroidManifest.xml
+
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF FILE STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════

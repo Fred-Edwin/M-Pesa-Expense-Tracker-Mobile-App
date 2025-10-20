@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p lib/models lib/screens lib/widgets lib/services lib/utils)",
+      "Bash(git init)",
+      "Bash(git config user.name \"Fred-Edwin\")",
+      "Bash(git config user.email \"noreply@github.com\")",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

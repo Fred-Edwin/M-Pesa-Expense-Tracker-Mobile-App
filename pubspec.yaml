@@ -1,0 +1,55 @@
+name: mpesa_expense_tracker
+description: A Flutter app to track M-Pesa expenses automatically
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  provider: ^6.1.1
+
+  # Local Database
+  sqflite: ^2.3.0
+  path: ^1.8.3
+
+  # SMS Reading
+  flutter_sms_inbox: ^1.0.2
+
+  # Permissions
+  permission_handler: ^11.0.1
+
+  # Date/Time Formatting
+  intl: ^0.18.1
+
+  # Google Fonts (Inter)
+  google_fonts: ^6.1.0
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - images/
+
+# App icon configuration (run: flutter pub run flutter_launcher_icons)
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icon.png"
+  adaptive_icon_background: "#00A651"
+  adaptive_icon_foreground: "assets/icon_foreground.png"
